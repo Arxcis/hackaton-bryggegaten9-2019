@@ -18,7 +18,7 @@ window.addEventListener('online', this.updateConnectionStatus)
 window.addEventListener('offline', this.updateConnectionStatus)
 ```
 
-![offline.jpg](./docs/offline.png)
+![offline.png](./docs/offline.png)
 
 
 #### 20:35 - Checking out how to enable offline maps
