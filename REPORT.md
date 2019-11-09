@@ -9,7 +9,11 @@ Individual project by Jonas Johan Solsvik, 16HBPROGA
 
 ### Saturday
 
-#### 19:00 - 
+#### 20:00 - Installing the pwa app on the homescreen of an iphone
+
+![iphone.jpg](./docs/iphone1.jpg)
+
+#### 19:00 - Got a tips on how I can beat the native team
 - Hett tips fra PREG! Reduser draw-calls. Bruk polylines
 - Savner WebGL 2.0. Apple må få fingern ut av ræva.
 

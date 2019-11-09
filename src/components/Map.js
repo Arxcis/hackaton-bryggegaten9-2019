@@ -16,16 +16,12 @@ class Map extends Component {
     }
 
     componentDidMount() {
-        console.log(process.env.NODE_ENV)
-
         mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
-        console.log(process.env.MAPBOX_TOKEN)
-        
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v10',
-            center: [0, 0],
+            center: [10.8358, 59.7195],
             zoom: 9,
         });
 
