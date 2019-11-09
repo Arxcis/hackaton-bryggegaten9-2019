@@ -12,7 +12,12 @@ class Map extends Component {
 
         this.state = {
             map: null,
+            online: false,
         }
+    }
+
+    updateConnectionStatus = () => {
+        this.setState({ online: window.navigator.onLine });
     }
 
     componentDidMount() {
@@ -27,14 +32,29 @@ class Map extends Component {
 
         map.on('load', () => {});
 
-        this.setState({
-            map,
-        });
+        this.setState({ map });
+
+        window.addEventListener('online', this.updateConnectionStatus)
+        window.addEventListener('offline', this.updateConnectionStatus)
+        this.updateConnectionStatus();
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('online', this.updateConnectionStatus)
+        window.removeEventListener('offline', this.updateConnectionStatus)
     }
 
     render() {
+        const { online } = this.state;
+        let offlineMessage;
+        if (!online) {
+            offlineMessage = <p className="offline">You are offline</p>
+        }
         return (
-            <section id="map" />
+            <section className="mapcontainer">
+                {offlineMessage}
+                <section id="map" />
+            </section>
         );
     }
 }

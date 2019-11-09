@@ -9,6 +9,23 @@ Individual project by Jonas Johan Solsvik, 16HBPROGA
 
 ### Saturday
 
+#### 22:00 - Add message when you go offline
+
+Using the two events `offline` and `online`, I am able to tell the user if he is disconnect or not.
+
+```javascript
+window.addEventListener('online', this.updateConnectionStatus)
+window.addEventListener('offline', this.updateConnectionStatus)
+```
+
+![offline.jpg](./docs/offline.png)
+
+
+#### 20:35 - Checking out how to enable offline maps
+
+- github.io example of offline maps - http://klokantech.github.io/mapbox-gl-js-offline-example/
+- github.com example repo https://github.com/klokantech/mapbox-gl-js-offline-example
+
 #### 20:00 - Installing the pwa app on the homescreen of an iphone
 
 ![iphone.jpg](./docs/iphone1.jpg)
