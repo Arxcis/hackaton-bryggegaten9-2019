@@ -15,8 +15,12 @@ class Map extends Component {
         }
     }
 
-    compnentDidMount() {
-        mapboxgl.accessToken = 'undefined';
+    componentDidMount() {
+        console.log(process.env.NODE_ENV)
+
+        mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
+
+        console.log(process.env.MAPBOX_TOKEN)
         
         const map = new mapboxgl.Map({
             container: 'map',
