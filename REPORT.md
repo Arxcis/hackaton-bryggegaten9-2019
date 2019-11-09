@@ -9,6 +9,23 @@ Individual project by Jonas Johan Solsvik, 16HBPROGA
 
 ### Saturday
 
+#### 22:30 - Attempt at adding splashscreen
+
+- No sucess yet on iOS. Android untested.
+- Adding a special apple link meta `<head>`  tag, with no luck
+```html
+<link 
+    rel="apple-touch-startup-image" 
+    href="splashscreen.png" 
+    media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+>
+<link 
+    rel="apple-touch-startup-image" 
+    href="splashscreen.png" 
+    media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+>
+```
+
 #### 22:00 - Add message when you go offline
 
 Using the two events `offline` and `online`, I am able to tell the user if he is disconnect or not.
@@ -18,7 +35,7 @@ window.addEventListener('online', this.updateConnectionStatus)
 window.addEventListener('offline', this.updateConnectionStatus)
 ```
 
-![offline.png](./docs/offline.png)
+![offline.png](docs/offline.png)
 
 
 #### 20:35 - Checking out how to enable offline maps
@@ -28,7 +45,7 @@ window.addEventListener('offline', this.updateConnectionStatus)
 
 #### 20:00 - Installing the pwa app on the homescreen of an iphone
 
-![iphone.jpg](./docs/iphone1.jpg)
+![iphone.jpg](docs/iphone1.jpg)
 
 #### 19:00 - Got a tips on how I can beat the native team
 - Hett tips fra PREG! Reduser draw-calls. Bruk polylines
