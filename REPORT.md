@@ -9,6 +9,18 @@ Individual project by Jonas Johan Solsvik, 16HBPROGA
 
 ### Saturday
 
+#### 19:00 - 
+- Hett tips fra PREG! Reduser draw-calls. Bruk polylines
+- Savner WebGL 2.0. Apple må få fingern ut av ræva.
+
+#### 18:00 - Gathering relevant links to work with mapbox
+
+- Custom mapbox layers for rendering wind - https://github.com/astrosat/windgl
+- Mapbox GL JS API reference - https://docs.mapbox.com/mapbox-gl-js/api/
+- How to use mapbox GL with React - https://blog.logrocket.com/how-to-use-mapbox-gl/
+- React-map-gl component - https://uber.github.io/react-map-gl/#/
+- Example project from Morten in Maritime Optima - https://github.com/MaritimeOptima/mapbox-weather-viewer/blob/master/examples/react-mapbox/src/components/Map.js
+
 #### 17:00 - setting up React devenv
 
 - Using facebooks script for setting up a pre-configured react environment - https://github.com/facebook/create-react-app
