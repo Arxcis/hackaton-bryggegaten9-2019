@@ -16,8 +16,14 @@ class Map extends Component {
         }
     }
 
-    updateConnectionStatus = () => {
+    onOnline = () => {
         this.setState({ online: window.navigator.onLine });
+        caches.delete('mapbox-tiles');
+        console.log('Online...')
+    }
+    onOffline = () => {
+        this.setState({ online: window.navigator.onLine });
+        console.log('Offline...')
     }
 
     componentDidMount() {
@@ -34,14 +40,14 @@ class Map extends Component {
 
         this.setState({ map });
 
-        window.addEventListener('online', this.updateConnectionStatus)
-        window.addEventListener('offline', this.updateConnectionStatus)
-        this.updateConnectionStatus();
+        window.addEventListener('online', this.onOnline)
+        window.addEventListener('offline', this.onOffline)
+        this.setState({ online: window.navigator.onLine });
     }
 
     componentWillUnmount() {
-        window.removeEventListener('online', this.updateConnectionStatus)
-        window.removeEventListener('offline', this.updateConnectionStatus)
+        window.removeEventListener('online', this.onOnline)
+        window.removeEventListener('offline', this.onOffline)
     }
 
     render() {

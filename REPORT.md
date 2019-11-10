@@ -7,6 +7,18 @@ Individual project by Jonas Johan Solsvik, 16HBPROGA
 
 ## Log
 
+### Sunday
+
+#### 13:52 - Serviceworker cookbook
+
+- https://serviceworke.rs/
+
+#### 11:50 - Splash screen generator
+
+- appscopes splash screen generator - https://appsco.pe/developer/splash-screens
+
+#### 11:10 - Good morning repo
+
 ### Saturday
 
 #### 22:30 - Attempt at adding splashscreen

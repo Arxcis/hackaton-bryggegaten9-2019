@@ -1,5 +1,5 @@
 {
-  "short_name": "MO Mapbox demo",
+  "short_name": "Mobox",
   "name": "Maritime Optima Mapbox demo",
   "icons": [
     {
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "icons/manifest-icon-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "icons/manifest-icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
