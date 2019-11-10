@@ -26,13 +26,11 @@ class Map extends Component {
     componentDidMount() {
         mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
+        const state = window.localStorage.getItem('map-options') || JSON.stringify({ center: [10.8358, 59.7195], zoom: 9 });
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v10',
-            ...JSON.parse(window.localStorage.getItem('map-options') || {
-                center: [10.8358, 59.7195],
-                zoom: 9,
-            }),
+            ...JSON.parse(state),
         });
         map.on('load', () => {});
 
@@ -54,10 +52,11 @@ class Map extends Component {
     }
 
     storeMapState = () => {
-        window.localStorage.setItem('map-options', JSON.stringify({
+        const state = {
             center: this.state.map.getCenter(),
             zoom: this.state.map.getZoom(),
-        }));
+        };
+        window.localStorage.setItem('map-options', JSON.stringify(state));
     }
 
     render() {
