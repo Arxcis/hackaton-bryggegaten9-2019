@@ -29,10 +29,11 @@ class Map extends Component {
         const map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v10',
-            center: [10.8358, 59.7195],
-            zoom: 9,
+            ...JSON.parse(window.localStorage.getItem('map-options') || {
+                center: [10.8358, 59.7195],
+                zoom: 9,
+            }),
         });
-
         map.on('load', () => {});
 
         this.setState({ map });
@@ -40,11 +41,23 @@ class Map extends Component {
         window.addEventListener('online', this.onOnline)
         window.addEventListener('offline', this.onOffline)
         this.setState({ online: window.navigator.onLine });
+
+        window.addEventListener('beforeunload', this.storeMapState)
     }
 
     componentWillUnmount() {
-        window.removeEventListener('online', this.onOnline)
-        window.removeEventListener('offline', this.onOffline)
+        window.removeEventListener('online', this.onOnline);
+        window.removeEventListener('offline', this.onOffline);
+        window.removeEventListener('beforeunload', this.storeMapState);
+
+        this.storeMapState();
+    }
+
+    storeMapState = () => {
+        window.localStorage.setItem('map-options', JSON.stringify({
+            center: this.state.map.getCenter(),
+            zoom: this.state.map.getZoom(),
+        }));
     }
 
     render() {

@@ -9,6 +9,27 @@ Individual project by Jonas Johan Solsvik, 16HBPROGA
 
 ### Sunday
 
+#### 14:50 - Store state in localStorage
+
+- Use localStorage to save state between reloads
+
+**Getting**
+```javascript
+...JSON.parse(window.localStorage.getItem('map-options') || {
+    center: [10.8358, 59.7195],
+    zoom: 9,
+}),
+```
+
+**Storing**
+```javascript
+window.localStorage.setItem('map-options', JSON.stringify({
+    center: this.state.map.getCenter(),
+    zoom: this.state.map.getZoom(),
+}));
+```
+
+
 #### 13:52 - Serviceworker cookbook
 
 - https://serviceworke.rs/
