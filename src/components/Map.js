@@ -18,12 +18,9 @@ class Map extends Component {
 
     onOnline = () => {
         this.setState({ online: window.navigator.onLine });
-        caches.delete('mapbox-tiles');
-        console.log('Online...')
     }
     onOffline = () => {
         this.setState({ online: window.navigator.onLine });
-        console.log('Offline...')
     }
 
     componentDidMount() {

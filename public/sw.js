@@ -68,3 +68,12 @@ self.addEventListener('fetch', event => {
 self.addEventListener('error', e => {
     console.log(e.filename, e.lineno, e.colno, e.message);
 });
+
+
+self.addEventListener('message', (event) => {
+    console.log(`The client sent me a message: ${event.data}`);
+
+    if (event.data === 'ONLINE') {
+        caches.delete('mapbox-tiles');
+    }
+});
